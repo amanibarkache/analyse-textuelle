@@ -32,7 +32,6 @@ Un score de Jaccard entre deux ensembles A et B se calcule par `|A ∩ B| / |A �
 ## Organisation du code
 
 ```
-src/
 ├── main.c         boucles principales (paragraphes / mots)
 ├── menu.c/.h      interface console
 ├── lecture.c/.h   lecture des fichiers et découpage en paragraphes
@@ -43,23 +42,19 @@ src/
 
 ## Compilation et exécution
 
-Prérequis : `gcc` et `make`.
-
+Prérequis :
+gcc -o analyse main.c menu.c lecture.c tree.c operations.c ensemble.c
 ```bash
 make
 ./analyse
 ```
 
-Le menu permet ensuite de charger des fichiers (par exemple ceux du dossier `exemples/`), puis de choisir une opération.
+Le menu permet ensuite de charger des fichiers (par exemple ceux du dossier `textes/`), puis de choisir une opération.
 
 ## Limites connues et pistes d'amélioration
 
 - Les BST ne sont **pas équilibrés** : sur des mots insérés dans l'ordre alphabétique, l'arbre dégénère en liste. Un AVL améliorerait les performances.
 - Les parcours itératifs utilisent des piles de taille fixe (4096), ce qui suppose un vocabulaire raisonnable.
-- Le tiret n'est pas un séparateur (« peut-être » devient « peutetre »).
-- La normalisation gère les lettres accentuées latines, pas l'alphabet arabe.
-- Pas encore de tests automatisés.
-
 ## Auteure
 
-[Ton prénom et nom], étudiante en informatique, [ton université], Algérie, 2026.
+Barkache Amani, étudiante en informatique, ESI, Algérie, 2026.
